@@ -1,0 +1,45 @@
+<div class="wrapper wrapper-full-page">
+    <div class="full-page lock-page">
+        <div class="content" style="background-color: white; padding-top:18px">
+            <owl-carousel-o [options]="customOptions">
+                <ng-template carouselSlide dotContent="Turism"><img src="../../../assets/img/lock.jpeg"></ng-template>
+                <ng-template carouselSlide><img src="../../../assets/img/lock.jpeg"></ng-template>
+                <ng-template carouselSlide><img src="../../../assets/img/lock.jpeg"></ng-template>
+                <ng-template carouselSlide><img src="../../../assets/img/lock.jpeg"></ng-template>
+                <ng-template carouselSlide><img src="../../../assets/img/lock.jpeg"></ng-template>
+            </owl-carousel-o>
+            <div class="container">
+                <div class="row">
+                    <div class="jumbotron text-center">
+                        <h1>Mean Register Login</h1>
+                        <p>Welcome to the MEAN Stack Application</p>
+                        <div>
+                            <a *ngIf="!authService.loggedIn()" routerLink="/register" class="btn btn-primary">Register</a>
+                            <a *ngIf="authService.loggedIn()" routerLink="/dashboard" class="btn btn-info">Dashboard</a>
+                            <a *ngIf="!authService.loggedIn()" routerLink="/login" class="btn btn-warning">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="full-page-background" style="background-image: url(../../../assets/img/lock.jpeg) "></div>---->
+    </div>
+</div>
+<!--<div class="full-page lock-page" filter-color="black">
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="jumbotron text-center">
+                    <h1>Mean Register Login</h1>
+                    <p>Welcome to the MEAN Stack Application</p>
+                    <div>
+                        <a *ngIf="!authService.loggedIn()" routerLink="/register" class="btn btn-primary">Register</a>
+                        <a *ngIf="authService.loggedIn()" routerLink="/dashboard" class="btn btn-info">Dashboard</a>
+                        <a *ngIf="!authService.loggedIn()" routerLink="/login" class="btn btn-warning">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="full-page-background" style="background-image: url(../../../assets/img/lock.jpeg) "></div>
+</div>-->

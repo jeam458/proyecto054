@@ -1,0 +1,135 @@
+@-webkit-keyframes panning {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@-moz-keyframes panning {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@-ms-keyframes panning {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@-o-keyframes panning {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@keyframes panning {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@-webkit-keyframes panning {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@keyframes panning {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.content {
+    padding-top: -18vh;
+}
+
+.panning {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #ffffff;
+    -webkit-animation: panning 80s infinite ease-in;
+    -o-animation: panning 80s infinite ease-in;
+    animation: panning 80s infinite ease-in;
+    -webkit-animation: panning 80s infinite ease-in 300ms 0 ease;
+    -moz-animation: panning 80s infinite ease-in 300ms 0 ease;
+    -ms-animation: panning 80s infinite ease-in 300ms 0 ease;
+    -o-animation: panning 80s infinite ease-in 300ms 0 ease;
+    animation: panning 80s infinite ease-in 300ms 0 ease;
+}
+
+.main-img {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding-top: 0px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.main-img.boxed .main-image-txt {
+    margin-top: 0px;
+}
+
+.with-overlay:before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-image: -webkit-linear-gradient(top, rgba(29, 48, 16, 0.6) 30%, rgba(0, 0, 0, 0.8) 100%);
+    background-image: -o-linear-gradient(top, rgba(29, 48, 16, 0.6) 30%, rgba(0, 0, 0, 0.8) 100%);
+    /*background-image: linear-gradient(to bottom, rgba(29, 48, 16, 0.6) 30%, rgba(0, 0, 0, 0.8) 100%);*/
+    background-repeat: repeat-x;
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#991d3010', endColorstr='#cc000000', GradientType=0);
+    z-index: 9;
+}
