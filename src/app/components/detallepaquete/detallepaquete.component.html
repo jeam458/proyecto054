@@ -1,0 +1,78 @@
+<div class="wrapper wrapper-full-page">
+    <div class="full-page lock-page">
+        <div class="content" style="background-color: white; padding-top:70px">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card">
+
+                            <div class="card-content">
+
+                                <owl-carousel-o [options]="customOptions">
+                                    <ng-template carouselSlide><img src="../../../assets/img/lock.jpeg"></ng-template>
+                                    <ng-template carouselSlide><img src="../../../assets/img/lock.jpeg"></ng-template>
+                                    <ng-template carouselSlide><img src="../../../assets/img/lock.jpeg"></ng-template>
+                                    <ng-template carouselSlide><img src="../../../assets/img/lock.jpeg"></ng-template>
+                                    <ng-template carouselSlide><img src="../../../assets/img/lock.jpeg"></ng-template>
+                                </owl-carousel-o>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="col-md-4">
+                        <div class="feature-box">
+                            <div class="text-center">
+                                <div class="circle-icon"><span class="icon-locate"></span>
+                                </div>
+                                <div class="contact-desc" style="margin-top: -2.3%">
+                                    <h4>{{paquete.Nombre}} tour</h4>
+                                    <h5>Precio Máximo USD {{paquete.Costo}}</h5>
+                                </div>
+                            </div>
+                            <hr>
+                            <form class="example-form">
+                                <div id="form-messages" class="alert" role="alert" style="display: none;"></div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="name">Fecha salida</label>
+                                            <input ng-model="startDate" class="form-control datepicker" placeholder="Fecha salida" id="datepicker1">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="message">Pasajeros</label>
+                                            <input type="number" ng-change="validNumberPasa(cantidadIntegrantes)" ng-model="cantidadIntegrantes" class="form-control" placeholder="Nro de personas">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <button class="btn btn-search btn-primary hvr-sweep-to-right" ng-click="listarporfechas(startDate,paquete._id)" style="background-color: #558B2F;border: #558B2F; padding-bottom: 9px;padding-top: 8.1px">Buscar</button>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button ng-click="abrirmodalgrupo()" ng-show="mostrarCrearGrupo" class="btn btn-primary btn-sm hvr-sweep-to-right" style="background-color: #558B2F;border: #558B2F; padding-bottom: 9px;padding-top: 8.1px" data-toggle="modal" data-target="#GrupoModal">Crear Grupo</button>
+                                        
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>-->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header card-header-icon" data-background-color="green">
+                                <i class="material-icons">place</i>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">{{paquete.Nombre}} Tour</h3>
+                                <span style="padding-left: 19.3%; margin-top: -40%">Costo Máximo USD {{paquete.Costo}}</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

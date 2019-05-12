@@ -2,23 +2,101 @@
     <div class="full-page lock-page">
         <div class="content" style="background-color: white; padding-top:18px">
             <owl-carousel-o [options]="customOptions">
-                <ng-template carouselSlide dotContent="Turism"><img src="../../../assets/img/lock.jpeg"></ng-template>
+                <ng-template carouselSlide><img src="../../../assets/img/lock.jpeg"></ng-template>
                 <ng-template carouselSlide><img src="../../../assets/img/lock.jpeg"></ng-template>
                 <ng-template carouselSlide><img src="../../../assets/img/lock.jpeg"></ng-template>
                 <ng-template carouselSlide><img src="../../../assets/img/lock.jpeg"></ng-template>
                 <ng-template carouselSlide><img src="../../../assets/img/lock.jpeg"></ng-template>
             </owl-carousel-o>
             <div class="container">
+
                 <div class="row">
                     <div class="jumbotron text-center">
-                        <h1>Tours generales</h1>
-                        <p>los mejores tours aqui</p>
-                        <div>
+                        <h1>{{datoshome}}</h1>
+                        <p>{{datoshome}}</p>
+                        <!---<div>
                             <a *ngIf="!authService.loggedIn()" routerLink="/register" class="btn btn-primary">Register</a>
                             <a *ngIf="authService.loggedIn()" routerLink="/dashboard" class="btn btn-info">Dashboard</a>
                             <a *ngIf="!authService.loggedIn()" routerLink="/login" class="btn btn-warning">Login</a>
+                        </div>-->
+                        <div id="app">
+                            <form class="example-form" [formGroup]='buscadorForm'>
+                                <p style="font-size: 12px">
+                                    <mat-form-field class="example-full-width" style="display: inline;">
+                                        <input matInput type="text" placeholder="Buscar Tour" [matAutocomplete]="auto" formControlName='buscadorInput'>
+                                    </mat-form-field>
+                                </p>
+
+                                <!--<span>Your choice is: {{buscadorForm.get('buscadorInput').value | json}}</span>-->
+                                <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                                    <mat-option *ngIf="isLoading" class="is-loading">
+                                        <mat-spinner diameter="50"></mat-spinner>
+                                    </mat-option>
+                                    <ng-container *ngIf="!isLoading">
+                                        <mat-option *ngFor="let tour of resultados" [value]="tour.Nombre" (click)="gotodetalle(tour._id)">
+                                            <img [src]="tour.img" alt="" style="float: left; width: 65px;
+                                            height: 40px;
+                                            background-size: cover;
+                                            border-radius: 5px;
+                                            margin-right: 15px;
+                                            margin-top: 4px">
+                                            <span>{{ tour.Nombre }}</span>
+                                            <!--<small> | ID: {{tour._id}}</small>-->
+                                        </mat-option>
+                                    </ng-container>
+                                </mat-autocomplete>
+                            </form>
+                        </div>
+
+                        <!--<img [src]="imageToShow" alt="Place image title" *ngIf="!isImageLoading">-->
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div *ngFor="let tour of paquetes">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card card-product">
+                                <div class="card-image" data-header-animation="true">
+                                    <a href="#pablo">
+                                        <img class="img" [src]="tour.img">
+                                    </a>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-actions">
+                                        <!--<button type="button" class="btn btn-danger btn-simple fix-broken-card">
+                                                    <i class="material-icons">build</i> Fix Header!
+                                                </button>
+                                        <button type="button" class="btn btn-default btn-simple" matTooltip="View">
+                                                    <i class="material-icons">art_track</i>
+                                                </button>-->
+                                        <button type="button" class="btn btn-success btn-simple" matTooltip="Edit" [value]="tour" (click)="gotodetalle(tour._id)">
+                                                    <i class="material-icons">shopping_basket</i> Reservar
+                                                </button>
+                                        <!--<button type="button" class="btn btn-danger btn-simple" matTooltip="Remove">
+                                                    <i class="material-icons">close</i>
+                                                </button>-->
+                                    </div>
+                                    <h4 class="card-title">
+                                        <a href="#pablo">{{tour.Nombre}}</a>
+                                    </h4>
+                                    <div class="card-description">
+                                        tour de muchas aventuras, atracciones...
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="price">
+                                        <h4>$ {{tour.Costo}}</h4>
+                                    </div>
+                                    <div class="stats pull-right">
+
+                                        <p class="category"><i class="material-icons">place</i><span>{{tour.Ubicacion[0].text}}, </span></p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

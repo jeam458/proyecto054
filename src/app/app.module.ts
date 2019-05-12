@@ -15,10 +15,13 @@ import {FlashMessagesModule} from 'angular2-flash-messages';
 import {AuthGuard} from './guards/auth.guard';
 import {NotAuthGuard} from './guards/notauth.guard';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 import { NguCarouselModule } from '@ngu/carousel';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DetallepaqueteComponent } from './components/detallepaquete/detallepaquete.component';
+import {MatFormFieldModule, MatInputModule, MatAutocompleteModule, MatButtonModule, MatProgressSpinnerModule} from '@angular/material';
 
 
 @NgModule({
@@ -30,7 +33,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProfileComponent,
     RegisterComponent,
     LoginComponent,
-    SidebarComponent
+    SidebarComponent,
+    DetallepaqueteComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FlashMessagesModule,
     NguCarouselModule,
     CarouselModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    HttpClientModule,
+    MatProgressSpinnerModule,
   ],
   providers: [AuthService,AuthGuard,NotAuthGuard],
   bootstrap: [AppComponent]

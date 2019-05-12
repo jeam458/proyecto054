@@ -5,12 +5,17 @@ import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {ProfileComponent} from './components/profile/profile.component';
 import {LoginComponent} from './components/login/login.component';
 import {RegisterComponent} from './components/register/register.component';
+import { DetallepaqueteComponent} from './components/detallepaquete/detallepaquete.component';
 import {AuthGuard} from './guards/auth.guard';
 import {NotAuthGuard} from './guards/notauth.guard';
 const appRoutes:Routes = [
     {
         path:'',
         component:HomeComponent
+    },
+    {
+        path:'detallepaquete/:id',
+        component: DetallepaqueteComponent
     },
     {
         path:'dashboard',

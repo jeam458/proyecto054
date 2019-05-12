@@ -1,0 +1,31 @@
+.feature-box {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 30px;
+    margin: 80px 0 60px;
+    position: relative;
+    border-radius: 5px;
+}
+
+.feature-box .desc {
+    font-size: .9em;
+    text-align: center;
+}
+
+.feature-box .desc h1,
+.feature-box .desc h2,
+.feature-box .desc h3,
+.feature-box .desc h4,
+.feature-box .desc h5 {
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.feature-box [class$='-icon'],
+.feature-box .fa {
+    position: relative;
+    float: none;
+    margin: -60px auto 30px;
+}
