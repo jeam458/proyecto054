@@ -34,6 +34,7 @@ export class ToursService {
 }
 
 export interface Home{
+    _id:String,
     Nombre: String,
     Descripcion: String,
     Correo: String,
@@ -44,6 +45,7 @@ export interface Home{
     galeria: Array<galeriaHome>
 }
 export interface galeriaHome{
+  _id:String,
   recomendacion: String, 
   descripcion: String, 
   imagen: String, 
@@ -51,6 +53,7 @@ export interface galeriaHome{
 }
 
 export interface paqueteSchema{
+  _id:String,
   Nombre: String,
   Ubicacion: [],
   UbicacionGps: UbicacionGps,

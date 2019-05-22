@@ -3,11 +3,10 @@
         <div class="content" style="background-color: white; padding-top:70px">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-8">
-                        <div class="card">
+                    <div class="col-md-6 col-sm-12 col-lg-8">
+                        <div class="card card-raised">
 
                             <div class="card-content">
-
                                 <owl-carousel-o [options]="customOptions">
                                     <ng-template carouselSlide><img src="../../../assets/img/lock.jpeg"></ng-template>
                                     <ng-template carouselSlide><img src="../../../assets/img/lock.jpeg"></ng-template>
@@ -59,18 +58,84 @@
                             </form>
                         </div>
                     </div>-->
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-header card-header-icon" data-background-color="green">
-                                <i class="material-icons">place</i>
-                            </div>
-                            <div class="card-content">
-                                <h3 class="card-title">{{paquete.Nombre}} Tour</h3>
-                                <span style="padding-left: 19.3%; margin-top: -40%">Costo Máximo USD {{paquete.Costo}}</span>
+                    <div class="col-md-6 col-sm-12 col-lg-4">
+                        <div class="card card-raised">
+                            <div class="card-header card-header-icon" data-background-color="blue">
+                                <!--<i class="avatar material-icons">place</i>-->
+                                <img class="avatar" src="../assets/assets/img/camp.png" alt="...">
 
                             </div>
+                            <div class="card-content">
+                                <h4 class="card-title" style="font-weight:bold;">{{paquete.Nombre}} Tour</h4>
+                                <p class="card-title" style="font-weight:bold;">Costo Máximo USD {{paquete.Costo}}</p>
+
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-lg-12">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Pasajeros</label>
+                                            <input type="number" class="form-control" min="1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-lg-12">
+                                        <div class="form-group">
+                                            <mat-datepicker-toggle matSuffix [for]="resultPicker">
+                                            </mat-datepicker-toggle>
+                                            <mat-input-container>
+                                                <input matInput [matDatepicker]="resultPicker" placeholder="Pick a day">
+                                            </mat-input-container>
+                                            <mat-datepicker #resultPicker [touchUi]="touch" [startView]="'month'">
+                                            </mat-datepicker>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--<legend>Datepicker</legend>-->
+
+                            </div>
+                            <div class="card-footer">
+                                <button [disabled]="!form1.valid" type="submit" class="btn btn-behance btn-round">Buscar</button>
+                            </div>
+
                         </div>
                     </div>
+
+                    <div class="col-md-12 col-sm-12 col-lg-12">
+                        <div class="card">
+                            <owl-carousel-o [options]="customOptions1">
+                                <div *ngFor="let grupo of grupos">
+                                    <ng-template carouselSlide>
+                                        <div class="card card-pricing card-raised">
+                                            <div class="card-content">
+                                                <h4 class="category">{{grupo.Nombre}}</h4>
+                                                <h6 class="card-title">USD {{grupo.TotalPago}} <s>{{paquete.Costo}}</s></h6>
+                                                <owl-carousel-o [options]="customOptions2" style="margin: auto;width: 50%;">
+                                                    <div *ngFor="let flat of grupo.Integrantes">
+                                                        <ng-template carouselSlide>
+                                                            <div class="icon icon-rose">
+                                                                <!--<i class="material-icons">home</i>-->
+                                                                <img class="avatar" style="width: 32px;height: 32px;display: inline-block" src="https://www.countryflags.io/{{flat.Nacionalidad}}/flat/32.png">
+                                                            </div>
+                                                        </ng-template>
+                                                    </div>
+                                                </owl-carousel-o>
+                                                <p class="card-description">miembros {{grupo.Integrantes.length}} de {{grupo.MaxIntegrantes}}</p>
+                                                <i class="material-icons">calendar_today</i>
+                                                <p class="card-description">
+                                                    Limite de reserva {{grupo.FechaMargen | date: 'dd/MM/yyyy'}}
+                                                </p>
+                                                <p class="card-description">
+                                                    Inicio de Tour {{grupo.FechaInicioTour | date: 'dd/MM/yyyy'}}
+                                                </p>
+                                                <a href="" class="btn btn-behance btn-round">Reservar</a>
+                                            </div>
+                                        </div>
+
+                                    </ng-template>
+                                </div>
+                            </owl-carousel-o>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div>

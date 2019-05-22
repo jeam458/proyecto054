@@ -6,11 +6,9 @@ declare var $:any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  
   constructor(){}
   title = 'app';
   ngOnInit(){
     $.material.init();
-  }
-  
+  }  
 }

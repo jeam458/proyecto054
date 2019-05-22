@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   isImageLoading: boolean;
   isLoading = false;
   paquetes:Array<paqueteSchema>;
-  datoshome: Observable<any>;
+  datoshome: any;
   resultados:Array<paqueteSchema>;
   buscadorForm:FormGroup;
   customOptions: any = {
@@ -43,7 +43,18 @@ export class HomeComponent implements OnInit {
     },
     nav: true
   }
-  constructor(public authService:AuthService, private tours:ToursService, private fb:FormBuilder, private satinizer:DomSanitizer, private readonly router:Router) { 
+  datoslimpioshome(){
+    this.datoshome.Correo = '';
+    this.datoshome.Descripcion ='';
+    this.datoshome.Facebook ='';
+    this.datoshome.Google ='';
+    this.datoshome.Instagram ='';
+    this.datoshome.Nombre ='';
+    this.datoshome.Twitter ='';
+    this.datoshome.galeria =[];
+  }
+  constructor(public authService:AuthService, private tours:ToursService, private fb:FormBuilder, private satinizer:DomSanitizer, private readonly router:Router) {
+     
   }
 
   ngOnInit() {
@@ -74,16 +85,7 @@ export class HomeComponent implements OnInit {
     if (datos) { return datos; }
   }
 
-  /*datoslimpioshome(){
-    this.datoshome.Correo = '';
-    this.datoshome.Descripcion ='';
-    this.datoshome.Facebook ='';
-    this.datoshome.Google ='';
-    this.datoshome.Instagram ='';
-    this.datoshome.Nombre ='';
-    this.datoshome.Twitter ='';
-    this.datoshome.galeria =[];
-  }*/
+ 
 
   createImageFromBlob(image: Blob) {
     let reader = new FileReader();
@@ -142,7 +144,7 @@ export class HomeComponent implements OnInit {
   listarComponentesHome(){
     this.tours.getHomes().subscribe(data=>{
       console.log(data[0]);
-      this.datoshome = data;
+      this.datoshome = data[0];
     })
   }
   listasPaquetes(){
